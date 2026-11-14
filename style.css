@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(27, 17, 12, 0.91),
+            rgba(27, 17, 12, 0.96)
+        ),
+        url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23");
+
+    background-size: cover;
+    background-position: center;
+
+    color: #e8d4a4;
+    font-family: 'Cormorant Garamond', serif;
+
+    text-align: center;
+}
+
+/* HEADER */
+
+header {
+    padding: 35px 15px 20px;
+}
+
+.laurel {
+    font-size: 55px;
+    color: #c9a34c;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(25px, 5vw, 43px);
+    letter-spacing: 4px;
+    color: #d7b75b;
+
+    text-shadow: 2px 3px 5px black;
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-top: 12px;
+    letter-spacing: 2px;
+}
+
+.gold-line {
+    width: 230px;
+    height: 2px;
+    background: #c9a34c;
+    margin: 20px auto;
+}
+
+/* INTRO */
+
+.intro {
+    max-width: 650px;
+    margin: 10px auto 25px;
+    padding: 20px;
+}
+
+.intro h2,
+.instructions h2 {
+    font-family: 'Cinzel', serif;
+    color: #d7b75b;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.difficulty {
+    color: #e0b65b;
+    font-weight: bold;
+    margin-top: 15px;
+    letter-spacing: 2px;
+}
+
+/* GAME */
+
+.game-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 25px;
+
+    background: rgba(46, 30, 20, 0.95);
+
+    border: 3px double #c9a34c;
+    border-radius: 8px;
+
+    box-shadow: 0 10px 35px black;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat-box span {
+    color: #c9a34c;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.stat-box strong {
+    font-family: 'Cinzel', serif;
+    font-size: 25px;
+}
+
+/* PUZZLE BOARD */
+
+.puzzle-frame {
+    padding: 9px;
+    background: #9d783d;
+    border: 3px solid #d6b65f;
+    box-shadow: inset 0 0 10px black;
+}
+
+.puzzle {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+
+    background: #302015;
+}
+
+.tile {
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(145deg, #ead7a4, #a98243);
+
+    border: 2px solid #68451d;
+
+    color: #4b2e17;
+
+    font-family: 'Cinzel', serif;
+    font-weight: 800;
+    font-size: clamp(17px, 4vw, 30px);
+
+    cursor: pointer;
+
+    box-shadow: inset 0 0 8px rgba(70, 35, 10, 0.6);
+
+    transition: background 0.2s, transform 0.2s;
+}
+
+.tile:hover {
+    background: #f2dfad;
+    transform: scale(0.96);
+}
+
+.tile.empty {
+    background: #21160f;
+    border: 2px dashed #80602f;
+    cursor: default;
+    box-shadow: inset 0 0 15px black;
+}
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+button {
+    padding: 12px 17px;
+
+    background: linear-gradient(
+        135deg,
+        #c49b46,
+        #856020
+    );
+
+    border: 2px solid #e0c47d;
+
+    color: #21150c;
+
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #f0d28b;
+    transform: translateY(-3px);
+}
+
+/* MESSAGE */
+
+.message {
+    margin-top: 22px;
+    font-size: 18px;
+    color: #e0c47d;
+    line-height: 1.5;
+}
+
+/* INSTRUCTIONS */
+
+.instructions {
+    max-width: 550px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.instructions ul {
+    list-style: none;
+    font-size: 19px;
+    line-height: 2;
+}
+
+.instructions li::before {
+    content: "✦ ";
+    color: #d7b75b;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.5);
+    border-top: 1px solid #a98243;
+    color: #c9a34c;
+    letter-spacing: 2px;
+}
+
+footer p {
+    margin: 8px;
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+    .game-container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .intro {
+        padding: 15px;
+    }
+
+    .intro p {
+        font-size: 18px;
+    }
+
+    .tile {
+        font-size: 19px;
+    }
+
+    button {
+        font-size: 11px;
+        padding: 10px;
+    }
+}
